@@ -1,21 +1,28 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseListener;
-public class Adapter implements MouseListener, MouseMotionListener{
+import java.awt.event.MouseAdapter;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.Component;
+public class Adapter extends MouseAdapter{
     JLabel x;
     public Adapter(){
         JFrame fr = new JFrame();
         fr.setSize(400,400);
-        fr.setVisible(true);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         x =new JLabel();
         fr.add(x);
+        Font f = new Font("Arial",Font.BOLD,20);
+        x.setForeground(Color.red);
+        x.setAlignmentX(Component.CENTER_ALIGNMENT);
+        x.setAlignmentY(Component.CENTER_ALIGNMENT);
+        x.setFont(f);
         fr.addMouseListener(this);
         fr.addMouseMotionListener(this);
-        fr.setLayout(new FlowLayout());
+        fr.setLayout(new GridBagLayout());
+        fr.setVisible(true);
     }
     @Override 
     public void mouseClicked(MouseEvent e){
