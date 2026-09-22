@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,9 +36,15 @@ public class HelloWorld implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        try{
         int a = Integer.parseInt(x2.getText());
         int b = Integer.parseInt(y2.getText());
         float c = (float) a / b;
         resField.setText(c + "");
+        } catch (NumberFormatException e1) {
+            JOptionPane.showMessageDialog(null, e1);
+        } catch (ArithmeticException e2) {
+            JOptionPane.showMessageDialog(null, e2);
+        }
     }
 }
