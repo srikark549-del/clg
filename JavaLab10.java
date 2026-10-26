@@ -10,7 +10,7 @@ import java.awt.GridLayout;
 public class JavaLab10 extends JFrame{
     JavaLab10(){
         setSize(400,400);
-        GridLayout gl = new GridLayout(4,3);
+        GridLayout gl = new GridLayout(5,3);
         setLayout(gl);
         String s;
         String arr[];
