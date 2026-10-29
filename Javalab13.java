@@ -43,6 +43,15 @@ public class Javalab13 {
                 }
                 break;
             case 2:
+                System.out.println("Enter phone number to search: ");
+                String mobile = scanner.next();
+                if(phoneToName.containsValue(mobile)){
+                    for(Map.Entry e : phoneToName.entrySet()){
+                         if(mobile.equals(e.getValue())){
+                            System.out.println("Name is "+ e.getKey());
+                         }
+                    }
+                }
                 break;
             case 3:
                 trig = 1;
